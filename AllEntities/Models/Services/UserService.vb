@@ -17,7 +17,7 @@ Public Class UserService
         userFaker.RuleFor(Function(u) u.Name, Function(f) f.Name.FullName())
         userFaker.RuleFor(Function(u) u.Email, Function(f) f.Internet.Email())
 
-        Return userFaker.Generate(100000)
+        Return userFaker.Generate(99999)
 
     End Function
 End Class
