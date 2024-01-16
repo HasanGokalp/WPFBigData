@@ -6,13 +6,14 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:dxmvvm="http://schemas.devexpress.com/winfx/2008/xaml/mvvm" 
     xmlns:local="clr-namespace:AllEntities"
+    xmlns:dxg="http://schemas.devexpress.com/winfx/2008/xaml/grid"
     mc:Ignorable="d" d:DesignHeight="700" d:DesignWidth="400">
     <UserControl.DataContext>
         <local:MainViewModel/>
     </UserControl.DataContext>
     <Grid>
-        <DataGrid ItemsSource="{Binding
-Users}" AutoGenerateColumns="False" Margin="0,0,74,10">
+        <DataGrid x:Name="Datas" ItemsSource="{Binding
+                    Users}" AutoGenerateColumns="False" Margin="0,0,74,134">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="ID" Binding="{Binding Id}" />
                 <DataGridTextColumn Header="Name" Binding="{Binding Name}" />

@@ -1,0 +1,25 @@
+﻿<UserControl 
+    x:Class="MainView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:dxmvvm="http://schemas.devexpress.com/winfx/2008/xaml/mvvm" 
+    xmlns:local="clr-namespace:AllEntitiesEFCore"
+    mc:Ignorable="d" d:DesignHeight="700" d:DesignWidth="400">
+    <UserControl.DataContext>
+        <local:MainViewModel/>
+    </UserControl.DataContext>
+    <Grid>
+        <DataGrid x:Name="Datas" ItemsSource="{Binding
+            Cars}" AutoGenerateColumns="False" Margin="0,0,74,134">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="ID" Binding="{Binding CAR_ID}" />
+                <DataGridTextColumn Header="Name" Binding="{Binding CAR_NAME}" />
+                <DataGridTextColumn Header="Model" Binding="{Binding CAR_MODEL}" />
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button x:Name="button" Command="{Binding GetAllCommand}" Content="GetAll" HorizontalAlignment="Left" Margin="331,497,0,0" VerticalAlignment="Top" Width="69" RenderTransformOrigin="-1.142,0.856"/>
+        <Button x:Name="button1" Command="{Binding CreateCarsCommand}" Content="Create" HorizontalAlignment="Left" Margin="331,470,0,0" VerticalAlignment="Top" Width="69"/>
+    </Grid>
+</UserControl>
